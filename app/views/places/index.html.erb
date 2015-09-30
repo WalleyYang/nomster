@@ -1,3 +1,6 @@
+<nav class="paginate-container col-xs-10 col-xs-offset-1">
+	<div class="pull-right"><%= paginate @places %></div>
+</nav>
 <% @places.each do |place| %>
   <div class="booyah-box col-xs-10 col-xs-offset-1">
     <h1><%= place.name %></h1>
@@ -5,3 +8,6 @@
     <p><%= place.description %><br />
   </div>
 <% end %>
+<nav class="paginate-container col-xs-10 col-xs-offset-1">
+	<div class="pull-right"><%= paginate @places %></div>
+</nav>

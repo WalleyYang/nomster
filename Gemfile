@@ -33,6 +33,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Kaminari paginate
+gem 'kaminari', '~> 0.16.3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
