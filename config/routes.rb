@@ -3,6 +3,9 @@ Nomster::Application.routes.draw do
   # Setup for PlacesController
   root 'places#index'
 
+  # Add CRUD for places
+  resources :places
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
