@@ -1,5 +1,8 @@
 class PlacesController < ApplicationController
-	def index
+	# Before filter to require user to be logged in for new and create
+  before_action :authenticate_user!, :only => [:new, :create]
+
+  def index
 	  # Implemented Kaminari paginate
 	  @places = Place.order(:name).page params[:page]
 	end
@@ -10,7 +13,7 @@ class PlacesController < ApplicationController
 
 	# Sends to database
     def create
-      Place.create(place_params)
+      current_user.places.create(place_params)
       redirect_to root_path
     end
 
