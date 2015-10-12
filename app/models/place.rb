@@ -6,5 +6,6 @@ class Place < ActiveRecord::Base
   belongs_to :user
 
   # Enter name for place
-  validates :name, :presence => true
+  validates :address, :description, :presence => true 
+  validates :name, :presence => true, length: { minimum: 3 }
 end
