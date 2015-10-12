@@ -13,8 +13,14 @@ class PlacesController < ApplicationController
 
 	# Sends to database
     def create
-      current_user.places.create(place_params)
-      redirect_to root_path
+      @place = current_user.places.create(place_params)
+      # Is item saved?
+      if @place.valid?
+        redirect_to root_path
+      else
+      # Render new action, tells browser of validation error
+      render :new, :status => :unprocessable_entity
+  end
     end
 
     def show
@@ -37,7 +43,12 @@ class PlacesController < ApplicationController
       end
 
       @place.update_attributes(place_params)
-      redirect_to root_path
+      
+      if @place.valid?
+        redirect_to root_path
+      else
+        render :edit, :status => :unprocessable_entity
+      end
     end
 
     def destroy

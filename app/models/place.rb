@@ -4,4 +4,7 @@ class Place < ActiveRecord::Base
 
   # Shortcut to give us places associated with user
   belongs_to :user
+
+  # Enter name for place
+  validates :name, :presence => true
 end
