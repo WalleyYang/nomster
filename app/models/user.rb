@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   # Add relationship
   has_many :places
+  has_many :comments
 end
