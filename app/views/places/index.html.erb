@@ -9,6 +9,19 @@
     <% if place.user.present? %>
       <small><%= place.user.email %></small>
     <% end %>
+
+    <% if place.comments.present? %>
+      <div class="col-xs-12">
+        <blockquote>
+          <% if place.comments.last.humanized_rating.present? %>
+            <b><%= place.comments.last.humanized_rating %></b> -
+          <% end %>
+          <%= place.comments.last.message %>
+          <small><%= place.comments.last.user.email if place.comments.last.user %></small>
+        </blockquote>
+      </div>
+    <% end %>
+
   </div>
 <% end %>
 <nav class="paginate-container col-xs-10 col-xs-offset-1">
