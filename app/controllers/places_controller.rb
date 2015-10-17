@@ -20,7 +20,7 @@ class PlacesController < ApplicationController
       else
       # Render new action, tells browser of validation error
       render :new, :status => :unprocessable_entity
-  end
+      end
     end
 
     def show
