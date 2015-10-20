@@ -75,3 +75,25 @@ blockquote p {
 .margin-horizontal {
   margin: 0 5px;
 }
+
+
+.place-picture-container {
+  margin:2.5px;
+}
+
+.place-picture {
+   padding:1px;
+   border:1px solid #021a40;
+   background-color:#fff;
+}
+
+.place-picture-caption {
+    position: absolute;
+    background-color: rgba(15, 15, 15, 0.7);
+    color: #fff;
+    top: 0px;
+    text-align: left;
+    padding: 5px;
+    margin:5px 2.5px;
+}
+

@@ -90,7 +90,6 @@
 </div>
 <div class="clear"></div>
 
-<div class="clear"></div>
 <% @place.comments.each do |comment| %>
 <div class="col-xs-12 col-sm-6">
   <blockquote>
@@ -104,42 +103,11 @@
 <% end %>
 <div class="clear"></div>
 
-<!-- Carousel -->
-
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <% @place.photos.each do |photo| %>
-    <% if # If first record show this %>
-    <div class="item active">
-      <%= image_tag photo.picture %>
-      <div class="carousel-caption">
-        <%= photo.caption %>
-      </div>
-      <% else # Second record and on %>  
-      <div class="item">
-        <%= image_tag photo.picture %>
-        <div class="carousel-caption">
-          <%= photo.caption %>
-        </div>
-      </div>
+<% @place.photos.each do |photo| %>
+<div class="col-xs-12 col-sm-6">
+    <div class="place-picture-container">
+      <%= image_tag photo.picture, :class => "img-responsive place-picture" %>
+      <div class="place-picture-caption"><%= photo.caption %></div>
     </div>
-    <% end %>
-    <% end %>    
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
 </div>
+<% end %>
