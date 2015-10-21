@@ -4,8 +4,8 @@ class Place < ActiveRecord::Base
 
   # Shortcut to give us places associated with user
   belongs_to :user
-  has_many :comments
-  has_many :photos
+  has_many :comments, dependent: :destroy
+  has_many :photos, dependent: :destroy
 
   # Geocoder
   geocoded_by :address
