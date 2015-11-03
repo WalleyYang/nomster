@@ -20,4 +20,8 @@ class Comment < ActiveRecord::Base
   		NotificationMailer.comment_added(self).deliver
   	end
 
+  	def comment_test
+
+  	end
+
   end
